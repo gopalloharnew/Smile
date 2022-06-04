@@ -8,9 +8,17 @@
 
 :root {
   --dark-color: hsl(240, 5%, 10%);
+  --eye-ball-bg: hsl(240deg 5% 25%);
   --accent: hsl(40, 90%, 50%);
   --mid-color: hsl(240, 5%, 65%);
+  --mouth-bg: hsl(40, 80%, 40%);
   --light-color: hsl(0, 0%, 97%);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body {
@@ -18,9 +26,6 @@ body {
   height: 100vh;
   background-color: var(--dark-color);
   color: var(--light-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .smile-box {
@@ -28,4 +33,58 @@ body {
   height: 100vmin;
   flex-grow: 0;
   flex-shrink: 0;
+}
+
+.smile-circle {
+  width: 75vmin;
+  height: 75vmin;
+  background-color: var(--accent);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.eye {
+  width: 16vmin;
+  height: 16vmin;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  position: absolute;
+  top: 32%;
+}
+
+.left-eye {
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.right-eye {
+  right: 30%;
+  transform: translate(50%, -50%);
+}
+
+.eye-ball {
+  width: 50%;
+  height: 50%;
+  background-color: var(--eye-ball-bg);
+  border-radius: 50%;
+  transition: transform 100ms ease;
+}
+
+.mouth-wraper {
+  height: 20vmin;
+  width: 40vmin;
+  border-radius: 0vmin 0vmin 20vmin 20vmin;
+  background-color: var(--mouth-bg);
+  transition: border-radius 250ms ease, height 250ms ease, width 250ms ease;
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  transform: translate(-50%, 50%);
+}
+
+.smile-circle:hover .mouth-wraper {
+  width: 35vmin;
+  height: 10vmin;
+  border-radius: 5rem;
 }
