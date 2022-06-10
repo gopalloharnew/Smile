@@ -13,6 +13,7 @@
   --mid-color: hsl(240, 5%, 65%);
   --mouth-bg: hsl(40, 80%, 40%);
   --light-color: hsl(0, 0%, 97%);
+  --red: hsl(10, 80%, 40%);
 }
 
 .flex-center {
@@ -41,7 +42,6 @@ body {
   background-color: var(--accent);
   border-radius: 50%;
   position: relative;
-  cursor: pointer;
 }
 
 .eye {
@@ -64,11 +64,16 @@ body {
 }
 
 .eye-ball {
-  width: 50%;
-  height: 50%;
+  width: 8vmin;
+  height: 8vmin;
   background-color: var(--eye-ball-bg);
   border-radius: 50%;
-  transition: transform 100ms ease;
+  transition: transform 100ms ease, background-color 100ms ease;
+}
+
+.eye:hover .eye-ball {
+  transform: scale(1.1);
+  background-color: var(--red);
 }
 
 .mouth-wraper {
