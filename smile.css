@@ -8,7 +8,7 @@
 
 :root {
   --dark-color: hsl(240, 5%, 10%);
-  --eye-ball-bg: hsl(240deg 5% 25%);
+  --eye-ball-bg: hsl(240, 5%, 25%);
   --accent: hsl(40, 90%, 50%);
   --mid-color: hsl(240, 5%, 65%);
   --mouth-bg: hsl(40, 80%, 40%);
@@ -27,6 +27,7 @@ body {
   height: 100vh;
   background-color: var(--dark-color);
   color: var(--light-color);
+  cursor: none;
 }
 
 .smile-box {
@@ -44,6 +45,7 @@ body {
   position: relative;
 }
 
+/* eyes */
 .eye {
   width: 16vmin;
   height: 16vmin;
@@ -76,6 +78,7 @@ body {
   background-color: var(--red);
 }
 
+/* mouth */
 .mouth-wraper {
   height: 20vmin;
   width: 40vmin;
@@ -92,4 +95,27 @@ body {
   width: 35vmin;
   height: 10vmin;
   border-radius: 5rem;
+}
+
+/* cursor */
+#cursor {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  pointer-events: none;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 5%;
+  top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cursor svg {
+  transition: fill 100ms ease;
+}
+
+.smile-circle:hover #cursor svg {
+  fill: hsl(240, 100%, 65%);
 }
