@@ -70,11 +70,10 @@ body {
   height: 8vmin;
   background-color: var(--eye-ball-bg);
   border-radius: 50%;
-  transition: transform 100ms ease, background-color 100ms ease;
+  transition: transform 20ms ease, background-color 20ms ease;
 }
 
-.eye:hover .eye-ball {
-  transform: scale(1.1);
+.red-eye {
   background-color: var(--red);
 }
 
@@ -91,7 +90,8 @@ body {
   transform: translate(-50%, 50%);
 }
 
-.smile-circle:hover .mouth-wraper {
+.smile-circle:hover .mouth-wraper,
+.smile-circle.sad .mouth-wraper {
   width: 35vmin;
   height: 10vmin;
   border-radius: 5rem;
